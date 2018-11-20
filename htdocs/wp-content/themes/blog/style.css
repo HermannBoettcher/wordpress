@@ -1,0 +1,42 @@
+/*
+Theme Name: HermannBoettcher blog theme
+Theme URI:
+Description: A WordPress theme built with Bootstrap 4 & material design
+Author: Hermann Boettcher;
+Author URI:
+*/
+
+/* main navbar layout */
+nav {
+  margin-top: 25px;
+}
+
+html, body, header {
+  height: 100%;
+}
+.mr-auto, .mx-auto {
+    margin-right: 0!important;
+    margin-left: auto;
+}
+.view {
+    background: url("../img/photos/DSCF9057.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.navbar {
+    background-color: transparent;
+}
+
+.top-nav-collapse {
+    background-color: #4285F4;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #4285F4;
+    }
+}

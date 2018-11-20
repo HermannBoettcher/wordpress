@@ -1,0 +1,28 @@
+<?php get_header(); ?>
+
+<?php $curauth = (isset($_GET['author_name'])) ?
+get_user_by('slug', $author_name):
+get_userdata(intval($author)); ?>
+<h1 class="archive">Autor:
+<?php echo $curauth->display_name; ?></h1>
+<p><em><?php echo $curauth->description; ?></em></p>
+
+<?php if (have_posts()):
+  while (have_posts()): the_post(); ?>
+
+  <div class="entry">
+    <h2><a href="<?php the_permalink(); ?>" title="Lesen Sie &quot;<?php the_title(); ?>&quot; vollständig"><?php the_title(); ?></a></h2>
+    <p class="blogmeta"><?php the_author_posts_link(); ?>
+    <a href="<?php bloginfo('url'); ?>/archiv/">
+    <?php the_time("d.m.Y"); ?></a>
+    <?php the_category(', '); ?>
+    <?php comments_popup_link('Keine Kommentare', '1 Kommentar', '% Kommentare', '', 'Kommentare geschlossen'); ?></p>
+    <?php the_content('Weiterlesen ...'); ?>
+  </div>
+<?php endwhile; else: ?>
+  <p>Es wurden leider keine Beiträge gefunden.</p>
+<?php endif; ?>
+<p><?php posts_nav_link(' | ', '&laquo; Ältere Artikel', 'Neuere Artikel &raquo;'); ?></p>
+
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>
