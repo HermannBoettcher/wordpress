@@ -1,15 +1,22 @@
 <?php  get_header(); ?><?php get_header(); ?>
 
+<div data-jarallax data-speed="0.5" class="jarallax jarallax-100vh">
 
-<div class="container-fluid intro view" style="background: url('<?php the_post_thumbnail_url(); ?>') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center">
-      <div class="container text-center white-text wow fadeInUp">
+    <img class="jarallax-img"
+    src=url('<?php the_post_thumbnail_url(); ?>') alt="">
+  <div class="mask">
+    <div class="container flex-center text-center text-white">
+      <div class="row mt-5">
         <h1><?php the_title(); ?></h1>
+        <br>
+        <p>Hier findet ihr meine letzten Reise- und Tourenberichte.</p>
+        <br>
+        <p>Freut euch arg, denn sie sind toll.</p>
       </div>
     </div>
   </div>
 </div>
+
 </header>
 
 <main>
