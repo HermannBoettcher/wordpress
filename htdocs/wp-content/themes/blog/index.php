@@ -19,67 +19,47 @@
   </div>
 </div>
 
-<div class="container-fluid">
+<div class="blogmeta-box">
+  <p class="blogmeta text-center">
 
-    <div class="row">
-
-        <!--Main column-->
-        <div class="col-md-8">
-          <!-- Section heading -->
-          <h2 class="h1-responsive font-weight-bold text-center my-5">Letzte Beiträge</h2>
-          <!-- Section description -->
-          <p class="text-center w-responsive mx-auto mb-5">Hier erscheinen meine eltzten Tourenberichte. </p>
-            <?php
-
-            if ( have_posts() ) {
-
-            while ( have_posts() ) {
-
-            the_post();
-
-            ?>
-
-            <!--Post-->
-
-           <?php get_template_part('content', get_post_format()); ?>
-
-            <!--/.Post-->
-
-            <hr>
-
-            <?php
-
-            } // end while
-
-            } // end if
-
-            ?>
-
-
-            <?php mdb_pagination(); ?>
-
-        </div>
-
-       <!--Sidebar-->
-
-<div class="col-md-4">
-
-    <?php if ( is_active_sidebar( 'sidebar' ) ) : ?>
-
-    <?php dynamic_sidebar( 'sidebar' ); ?>
-
-    <?php endif; ?>
-
+  </p>
 </div>
 
-<!--/.Sidebar-->
+<div class="container">
 
-    </div>
+  <!-- Section heading -->
+  <h2 class="h1-responsive font-weight-bold text-center my-5">Letzte Beiträge</h2>
+  <!-- Section description -->
+  <p class="text-center w-responsive mx-auto mb-5">Hier erscheinen meine eltzten Tourenberichte. </p>
 
-</div>
+  <?php
+    if ( have_posts() ) {
+
+      while ( have_posts() ) {
+
+        the_post();
+  ?>
+
+  <!--Post-->
+
+   <?php get_template_part('content', get_post_format()); ?>
+
+   <!--/.Post-->
+
+  <hr>
+
+  <?php
+
+    } // end while
+
+    } // end if
+
+  ?>
+
+
+  <?php mdb_pagination(); ?>
 
 <!--/.Main layout-->
-
 </main>
 
 
