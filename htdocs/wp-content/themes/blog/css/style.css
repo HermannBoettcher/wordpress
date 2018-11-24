@@ -1,0 +1,19 @@
+
+.top-nav-collapse {
+  background-color: #4285F4; }
+
+.blogmeta-box {
+  background-color: #4285F4;
+}
+
+.blogmeta {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: white;
+  font-weight: 600;
+}
+
+.blogmeta a {
+  color: white;
+  font-weight: 600;
+}

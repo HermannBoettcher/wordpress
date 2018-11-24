@@ -1,17 +1,14 @@
-<?php  get_header(); ?><?php get_header(); ?>
+<?php  get_header(); ?>
 
-<div data-jarallax data-speed="0.5" class="jarallax jarallax-100vh">
+<?php if (have_posts()):
+  while(have_posts()): the_post(); ?>
 
-    <img class="jarallax-img"
-    src=url('<?php the_post_thumbnail_url(); ?>') alt="">
+<div data-jarallax data-speed="0.3" class="view jarallax" style="height: 100vh;">
+  <img class="jarallax-img" src="<?php the_post_thumbnail_url(); ?>" alt="">
   <div class="mask">
     <div class="container flex-center text-center text-white">
       <div class="row mt-5">
         <h1><?php the_title(); ?></h1>
-        <br>
-        <p>Hier findet ihr meine letzten Reise- und Tourenberichte.</p>
-        <br>
-        <p>Freut euch arg, denn sie sind toll.</p>
       </div>
     </div>
   </div>
@@ -21,24 +18,23 @@
 
 <main>
 <!--Main layout-->
-<div class="container">
-  <!--Main column-->
-  <div class="col-md-8">
-    <?php
-        if ( have_posts() ) {
-        the_post(); }
-    ?>
-  </div
 
+  <div class="blogmeta-box">
+    <p class="blogmeta text-center">
+      <?php the_author_posts_link(); ?> &bull;
+      <a href="<?php bloginfo('url'); ?>/archiv/"><?php the_time("d.m.Y"); ?></a> &bull;
+      <?php the_category(', '); ?> &bull; 
+      <?php comments_popup_link('Keine Kommentare', '1 Kommentar', '% Kommentare', '', 'Kommentar geschlossen'); ?>
+    </p>
+  </div>
+  <div class="container">
+    <?php the_content('Weiterlesen ... '); ?>
+    <p class="tags">Tags: <?php the_tags('', ' &bull; ', ''); ?></p>
+  </div>
 
-        <!--Sidebar-->
-        <div class="col-md-4">
-            <?php if ( is_active_sidebar( 'sidebar' ) ) : ?>
-            <?php dynamic_sidebar( 'sidebar' ); ?>
-            <?php endif; ?>
-        </div>
-        <!--/.Sidebar-->
-</div>
 <!--/.Main layout-->
 </main>
+
+<?php endwhile; endif; ?>
+
 <?php  get_footer(); ?>

@@ -4,7 +4,7 @@
 
 <main>
 
-<div data-jarallax data-speed="0.5" class="view jarallax" style="height: 100vh;">
+<div data-jarallax data-speed="0.3" class="view jarallax" style="height: 100vh;">
   <img class="jarallax-img" src="<?php echo get_template_directory_uri(); ?>/img/photos/DSCF9057.jpg" alt="">
   <div class="mask">
     <div class="container flex-center text-center text-white">
